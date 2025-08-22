@@ -1,0 +1,352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.game-info {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.score {
+    color: #4CAF50;
+}
+
+.question-counter {
+    color: #2196F3;
+}
+
+.screen {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.welcome-card,
+.question-card,
+.result-card,
+.final-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.welcome-card h3,
+.final-card h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.welcome-card p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.grammar-tips {
+    margin: 30px 0;
+    text-align: left;
+}
+
+.tip {
+    background: #f8f9fa;
+    border-left: 4px solid #4CAF50;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.tip strong {
+    color: #2196F3;
+}
+
+.tip em {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.question-header {
+    margin-bottom: 20px;
+}
+
+.grammar-point {
+    background: #E3F2FD;
+    color: #1976D2;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.question-text {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.option {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.option:hover {
+    background: #e3f2fd;
+    border-color: #2196F3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+}
+
+.option.selected {
+    background: #2196F3;
+    color: white;
+    border-color: #1976D2;
+}
+
+.option.correct {
+    background: #4CAF50;
+    color: white;
+    border-color: #388E3C;
+}
+
+.option.incorrect {
+    background: #f44336;
+    color: white;
+    border-color: #d32f2f;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #2196F3, #21CBF3);
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #9E9E9E, #757575);
+    color: white;
+}
+
+.result-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.result-score {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.explanation {
+    background: #f8f9fa;
+    border-left: 4px solid #4CAF50;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.correct-answer {
+    background: #e8f5e8;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.final-score {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.performance {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+.performance.excellent {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.performance.good {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.performance.needs-improvement {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(102, 126, 234, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-card,
+    .question-card,
+    .result-card,
+    .final-card {
+        padding: 30px 20px;
+    }
+    
+    .options {
+        grid-template-columns: 1fr;
+    }
+    
+    .question-text {
+        font-size: 1.5rem;
+    }
+    
+    .score-board {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

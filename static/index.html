@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Trivia - Present Simple vs Present Continuous</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎯 English Grammar Trivia</h1>
+            <h2>Present Simple vs Present Continuous</h2>
+        </header>
+
+        <div class="game-info">
+            <div class="score-board">
+                <span class="score">Score: <span id="score">0</span></span>
+                <span class="question-counter">Question: <span id="current-question">0</span>/<span id="total-questions">0</span></span>
+            </div>
+        </div>
+
+        <div id="start-screen" class="screen">
+            <div class="welcome-card">
+                <h3>¡Bienvenido al Juego de Trivia!</h3>
+                <p>Practica la diferencia entre Present Simple y Present Continuous</p>
+                <div class="grammar-tips">
+                    <div class="tip">
+                        <strong>Present Simple:</strong> Rutinas, hábitos, hechos generales
+                        <br><em>Ejemplos: I work every day, She speaks English</em>
+                    </div>
+                    <div class="tip">
+                        <strong>Present Continuous:</strong> Acciones que suceden ahora
+                        <br><em>Ejemplos: I am working now, She is speaking</em>
+                    </div>
+                </div>
+                <button id="start-game" class="btn btn-primary">Comenzar Juego</button>
+            </div>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="grammar-point" id="grammar-point"></span>
+                </div>
+                <div class="question-text" id="question-text"></div>
+                <div class="options" id="options-container"></div>
+                <div class="question-actions">
+                    <button id="submit-answer" class="btn btn-primary" disabled>Enviar Respuesta</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen hidden">
+            <div class="result-card">
+                <div class="result-header">
+                    <h3 id="result-title"></h3>
+                    <div class="result-score">
+                        <span id="final-score"></span>
+                    </div>
+                </div>
+                <div class="result-details">
+                    <div id="result-explanation" class="explanation"></div>
+                    <div id="correct-answer" class="correct-answer"></div>
+                </div>
+                <div class="result-actions">
+                    <button id="next-question" class="btn btn-primary">Siguiente Pregunta</button>
+                    <button id="finish-game" class="btn btn-secondary hidden">Terminar Juego</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="final-screen" class="screen hidden">
+            <div class="final-card">
+                <h3>🎉 ¡Juego Completado!</h3>
+                <div class="final-score">
+                    <span>Puntuación Final: </span>
+                    <span id="game-final-score"></span>
+                </div>
+                <div class="performance">
+                    <div id="performance-message"></div>
+                </div>
+                <div class="final-actions">
+                    <button id="play-again" class="btn btn-primary">Jugar de Nuevo</button>
+                    <button id="review-mistakes" class="btn btn-secondary">Revisar Errores</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Cargando pregunta...</p>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Trivia Server",
+			"type": "shell",
+			"command": "/home/frankhz/Ambiente_Desarrollo/TriviaJs/.venv/bin/python",
+			"args": [
+				"main.py"
+			],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}
