@@ -149,3 +149,112 @@ Este juego está diseñado para ayudar a estudiantes de inglés a:
 - Mejorar su comprensión a través de la repetición
 
 ¡Diviértete aprendiendo inglés! 🎉
+
+## 🌐 Deployment a Servidores Gratuitos
+
+### Opción 1: Render (Recomendado)
+
+1. **Preparar el proyecto**:
+   - Sube tu código a GitHub
+   - Asegúrate de tener `requirements.txt` y `main.py`
+
+2. **Crear cuenta en Render**:
+   - Ve a [render.com](https://render.com)
+   - Crea una cuenta gratuita
+
+3. **Deploy**:
+   - Conecta tu repositorio de GitHub
+   - Configura el servicio:
+     - **Build Command**: `pip install -r requirements.txt`
+     - **Start Command**: `python main.py`
+     - **Environment**: Python 3
+
+4. **Variables de entorno** (si necesitas):
+   ```
+   PORT=8001
+   ```
+
+### Opción 2: Railway
+
+1. **Crear cuenta en Railway**:
+   - Ve a [railway.app](https://railway.app)
+   - Conecta con GitHub
+
+2. **Deploy desde GitHub**:
+   - Selecciona tu repositorio
+   - Railway detectará automáticamente que es Python
+   - El deploy será automático
+
+### Opción 3: PythonAnywhere
+
+1. **Crear cuenta gratuita**:
+   - Ve a [pythonanywhere.com](https://pythonanywhere.com)
+   - Registra una cuenta gratuita
+
+2. **Subir archivos**:
+   - Usa el file manager o Git para subir tu código
+   - Instala dependencias: `pip3.10 install --user -r requirements.txt`
+
+3. **Configurar Web App**:
+   - Crea una nueva Web App
+   - Configura para usar FastAPI/ASGI
+
+### 📋 Archivos Adicionales para Deploy
+
+Para facilitar el deployment, puedes crear estos archivos:
+
+#### `Procfile` (para Heroku/Railway):
+```
+web: python main.py
+```
+
+#### `runtime.txt` (especificar versión de Python):
+```
+python-3.11
+```
+
+#### `app.yaml` (para Google App Engine):
+```yaml
+runtime: python311
+service: default
+
+env_variables:
+  PORT: 8080
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 1
+```
+
+### 🔧 Ajustes para Producción
+
+Modifica `main.py` para producción:
+
+```python
+import os
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8001))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+```
+
+### 💡 Tips para Deployment
+
+1. **Variables de entorno**: Usa variables de entorno para configuraciones
+2. **Logs**: Añade logging para debugging en producción
+3. **CORS**: Si planeas usar el frontend desde otro dominio
+4. **HTTPS**: Los servicios gratuitos suelen incluir SSL automático
+5. **Dominio personalizado**: Algunos servicios permiten dominios custom
+
+### 🚀 Pasos Rápidos para Render
+
+1. Fork/sube tu código a GitHub
+2. Ve a Render → New → Web Service
+3. Conecta tu repo de GitHub
+4. Configura:
+   - **Build**: `pip install -r requirements.txt`
+   - **Start**: `python main.py`
+5. ¡Deploy automático!
+
+Tu juego estará disponible en una URL como: `https://tu-proyecto.onrender.com`

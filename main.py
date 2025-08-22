@@ -3,6 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import random
+import os
 from typing import List
 
 app = FastAPI(title="English Trivia Game - Present Simple vs Present Continuous")
@@ -167,4 +168,6 @@ async def get_random_questions(count: int = 5):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    # Usar la variable de entorno PORT si está disponible (para deployment)
+    port = int(os.environ.get("PORT", 8001))
+    uvicorn.run(app, host="0.0.0.0", port=port)
